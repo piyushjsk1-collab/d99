@@ -28,13 +28,18 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow: hidden;
+      z-index: -1;
     }
 
+    /* Image fast zoom same as button */
     .background-image {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: top center;
+      transform: scale(1);
+      animation: fast-zoom 0.5s infinite alternate ease-in-out;
     }
 
     .content {
@@ -70,13 +75,11 @@
       border: none;
     }
 
-    /* Hover Effect */
     .btn-whatsapp:hover {
       transform: scale(1.25);
       box-shadow: 0 0 30px rgba(37, 211, 102, 1), 0 0 60px rgba(18, 140, 126, 0.8);
     }
 
-    /* Glow ripple inside */
     .btn-whatsapp::before {
       content: "";
       position: absolute;
@@ -101,7 +104,7 @@
       }
     }
 
-    /* Zoom-in / Zoom-out Animation */
+    /* Zoom-in / Zoom-out fast animation (used for both image & button) */
     @keyframes fast-zoom {
       0% {
         transform: scale(1);
@@ -112,7 +115,6 @@
       }
     }
 
-    /* Mobile Responsive */
     @media (max-width: 768px) {
       .btn-whatsapp {
         font-size: 18px;
@@ -140,7 +142,7 @@
     <a id="waBtn" class="btn-whatsapp"
       href="https://wa.me/+966562241924?text=Hi%20there!%20I%20would%20love%20to%20set%20up%20a%20new%20ID%20for%20Winxbet247.%20Thank%20you"
       target="_blank">
-       WhatsApp Now
+      WhatsApp Now
     </a>
   </div>
 
